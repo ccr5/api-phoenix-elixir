@@ -7,6 +7,9 @@ defmodule PhoenixapiWeb.Router do
 
   scope "/api", PhoenixapiWeb do
     pipe_through :api
+
+    # create a get function to / endpoint
+    get "/", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
