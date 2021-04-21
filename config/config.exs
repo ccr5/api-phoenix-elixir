@@ -10,6 +10,11 @@ use Mix.Config
 config :phoenixapi,
   ecto_repos: [Phoenixapi.Repo]
 
+# create a new config to set identity column to use UUID
+config :phoenixapi, Phoenixapi.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :phoenixapi, PhoenixapiWeb.Endpoint,
   url: [host: "localhost"],
