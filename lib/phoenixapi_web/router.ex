@@ -10,6 +10,9 @@ defmodule PhoenixapiWeb.Router do
 
     # create a get function to / endpoint
     get "/", WelcomeController, :index
+
+    # create a new route to insert a restaurante (post)
+    post "/restaurants", RestaurantsController, :create
   end
 
   # Enables LiveDashboard only for development
