@@ -13,6 +13,11 @@ defmodule PhoenixapiWeb.Router do
 
     # create a new route to insert a restaurante (post)
     post "/restaurants", RestaurantsController, :create
+
+    # when we use resources, phx will create all routers from a controller
+    # to see it, use mix phx.routes
+    # We can choice the methods we want using only:
+    resources "/supplies", SuppliesController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development

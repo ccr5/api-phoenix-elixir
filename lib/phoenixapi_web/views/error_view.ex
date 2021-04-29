@@ -20,6 +20,11 @@ defmodule PhoenixapiWeb.ErrorView do
     %{message: translate_errors(changeset)}
   end
 
+  # this function is called at fallback controller (when receive a string)
+  def render("error.json", %{result: result}) do
+    %{message: result}
+  end
+
   # this function improves errors. We can see more in phoenix traverser erros (I think kk)
   defp translate_errors(changeset) do
     Changeset.traverse_errors(changeset, fn {msg, opts} ->
