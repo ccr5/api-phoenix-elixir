@@ -35,4 +35,9 @@ defmodule PhoenixapiWeb.Router do
       live_dashboard "/dashboard", metrics: PhoenixapiWeb.Telemetry
     end
   end
+
+  # Router to debug Bamboo emails
+  if Mix.env() == :dev do
+    forward "/send_emails", Bamboo.SentEmailViewerPlug
+  end
 end

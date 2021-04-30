@@ -1,6 +1,6 @@
 defmodule Phoenixapi.Supplies.GetByExpiration do
   import Ecto.Query
-  alias Phoenixapi.Supply
+  alias Phoenixapi.{Repo, Restaurant, Supply}
 
   def call do
     today = Date.utc_today()
@@ -19,5 +19,12 @@ defmodule Phoenixapi.Supplies.GetByExpiration do
         where: supply.expiration_date >= ^begin and supply.expiration_date <= ^finish,
         # preload includes values of a relationship
         preload: [:restaurant]
+
+    # Enum module
+    # fucntions to works with enumerables
+    # lambda functions = fn
+    query
+    |> Repo.all()
+    |> Enum.group_by(fn %Supply{restaurant: %Restaurant{email: email}} -> email end)
   end
 end
