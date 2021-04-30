@@ -7,10 +7,12 @@ use Mix.Config
 # Run `mix help test` for more information.
 config :phoenixapi, Phoenixapi.Repo,
   username: "postgres",
-  password: 123456,
+  password: 123_456,
   database: "phoenixapi_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :phoenix, Phoenixapi.Mailer, adapter: Bamboo.TestAdapter
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.

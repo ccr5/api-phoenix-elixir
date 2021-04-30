@@ -1,12 +1,13 @@
-defmodule Phoenixapi.Restaurant do
+defmodule Phoenixapi.Supply do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Phoenixapi.Supply
+  alias Phoenixapi.Restaurant
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   # @.... create a module variable
-  @required_params [:email, :name]
+  @required_params [:description, :expiration_date, :responsible, :restaurant_id]
 
   # special variable of Jason module
   # pass which fields Jason will render
@@ -16,11 +17,12 @@ defmodule Phoenixapi.Restaurant do
   # creating restaurants
   # Elixir / Phoenix doesn't use model but schema.
   # Schemas do cast and model datas.
-  schema "restaurants" do
-    field :email, :string
-    field :name, :string
+  schema "supplies" do
+    field(:description, :string)
+    field(:expiration_date, :date)
+    field(:responsible, :string)
 
-    has_many :supplies, Supply
+    belongs_to :restaurant, Restaurant
 
     timestamps()
   end
@@ -31,8 +33,7 @@ defmodule Phoenixapi.Restaurant do
     %__MODULE__{}
     |> cast(params, @required_params)
     |> validate_required(@required_params)
-    |> validate_length(:name, min: 2)
-    |> validate_format(:email, ~r/@/)
-    |> unique_constraint([:email])
+    |> validate_length(:description, min: 3)
+    |> validate_length(:responsible, min: 3)
   end
 end
