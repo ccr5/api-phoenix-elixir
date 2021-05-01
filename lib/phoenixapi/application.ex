@@ -14,11 +14,15 @@ defmodule Phoenixapi.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Phoenixapi.PubSub},
       # Start the Endpoint (http/https)
-      PhoenixapiWeb.Endpoint
+      PhoenixapiWeb.Endpoint,
       # Start a worker by calling: Phoenixapi.Worker.start_link(arg)
       # {Phoenixapi.Worker, arg}
+      Phoenixapi.Supplies.Scheduler
+      # Start GenServer to send email each 10 secs
     ]
 
+    # Supervisor call the start_link function of its children and
+    # and reload a children function if necessary
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Phoenixapi.Supervisor]
