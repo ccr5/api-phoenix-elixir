@@ -168,7 +168,7 @@ Project Link: [https://github.com/ccr5/api-phoenix-elixir](https://github.com/cc
 [issues-shield]: https://img.shields.io/github/issues/ccr5/api-phoenix-elixir.svg?style=for-the-badge
 [issues-url]: https://github.com/ccr5/api-phoenix-elixir/issues
 [license-shield]: https://img.shields.io/github/license/ccr5/api-phoenix-elixir.svg?style=for-the-badge
-[license-url]: https://github.com/ccr5/api-phoenix-elixir/blob/main/LICENSE
+[license-url]: https://github.com/ccr5/api-phoenix-elixir/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mattnobre
 [product-screenshot]: https://i.ytimg.com/vi/RPs4SHpSThU/maxresdefault.jpg
