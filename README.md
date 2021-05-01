@@ -1,8 +1,9 @@
-# class 5
-1. Author model (send & receive) and task (assync methods)
-2. short life (Tasks)
-3. Stream module for lazy evaluation
-4. Use task_stream (task using lazy evalutiaon) (expiration_notification)
-5. Set a default value (scheduler.ex)
-6. Use GenServer (scheduler.ex)
-7. Supervisor - Phoenix (application.ex)
+# class 6
+1. Logic test
+2. Changeset test
+3. Use assert and pattern matching to test
+4. Controller test
+5. View test
+6. Async tests (Only to some databases)
+7. check cover tests (mix test --cover)
+8. Lib to statistical data about tests (Excoveralls)
