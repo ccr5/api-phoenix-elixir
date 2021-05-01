@@ -16,7 +16,7 @@ config :phoenixapi, Phoenixapi.Repo,
   migration_foreign_key: [type: :binary_id]
 
 # Set Phoenixapi to use Bamboo
-config :phoenix, Phoenixapi.Mailer, adapter: Bamboo.LocalAdapter
+config :phoenixapi, Phoenixapi.Mailer, adapter: Bamboo.LocalAdapter
 
 # Configures the endpoint
 config :phoenixapi, PhoenixapiWeb.Endpoint,
